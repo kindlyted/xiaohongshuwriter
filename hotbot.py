@@ -46,16 +46,22 @@ def generate_content(topic):
     # 定义提示词
     your_prompt = f"请以{topic}为主题，创作300字左右的小红书文案。"
 
-    response = client.chat.completions.create(
-        model="4.0Ultra",
-        messages=[{ "role": "user", "content": your_prompt }],
-        temperature=0.5,
-        # max_tokens=50,
-        # top_p=1,
-        # frequency_penalty=0.5,
-        # presence_penalty=0,
-    )
-    return response.choices[0].message.content
+    try:
+        response = client.chat.completions.create(
+            model="4.0Ultra",
+            messages=[{ "role": "user", "content": your_prompt }],
+            temperature=0.5,
+            # max_tokens=50,
+            # top_p=1,
+            # frequency_penalty=0.5,
+            # presence_penalty=0,
+        )
+        answer = response.choices[0].message.content
+    except Exception as e:
+        answer = "censored by LLM"
+        # 在这里处理异常，例如返回一个默认值或重新尝试操作
+    return answer
+
 
 def main():
     # 设置gradio界面
