@@ -1,11 +1,11 @@
 # xiaohongshuwriter
 Let LLM know what is the hottest topic today, and generate your Xiaohongshu article on the topic.
 # 演示
-https://chat.ai4uo.com
+https://chat.ai4uo.com（auth在代码里）
 # 功能
 - 1.相当于一个简单的GPTs，造轮子的初衷是为了解决无法注册和使用chatgpt和GPTs的问题。
-- 2.让chatgpt实时观察各大平台热点，比如微博热搜，百度热搜
-- 3.让chatgpt根据用户指定的热门话题进行小红书文案创作。
+- 2.实时读取各大平台热点，比如抖音，微博热搜，百度热搜
+- 3.根据用户指定的热门话题进行小红书文案创作。
 # 部署
 - pip install -r requirements.txt
 # 引用
